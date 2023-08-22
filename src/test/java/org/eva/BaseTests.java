@@ -12,38 +12,18 @@ import pages.HomePage;
 import java.util.List;
 
 public class BaseTests  {
-    private WebDriver driver;
+    public WebDriver driver;
     protected HomePage page;
 
+    public static final String Baseurl = "https://the-internet.herokuapp.com/";
     @BeforeEach
     public void setUp(){
-        System.setProperty("webdriver.chrome.driver","C:\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver\\chromedriver.exe");
         driver=new ChromeDriver();
-        driver.get("https://the-internet.herokuapp.com/");
         page=new HomePage(driver);
-//Shembull1
-        //WebElement inpitsLink=driver.findElement(By.linkText("Inputs"));
-        //inpitsLink.click();
-//Shembull2
-        //List<WebElement> links=driver.findElements(By.tagName("a"));
-       // System.out.println(links.size());
-
-//Ex.1
-//        WebElement content=driver.findElement(By.linkText("Shifting Content"));
-//        content.click();
-//        driver.findElement(By.linkText(("Example 1: Menu Element"))).click();
-//        List<WebElement>  liElements=driver.findElements(By.tagName("li"));
-//         System.out.println(liElements.size());
-
     }
-//    @AfterEach
-//    public void tearDown(){
-//        driver.quit();
-//    }
-
-
-//    public static void main(String[] args){
-//        BaseTests tests=new BaseTests();
-//        tests.setUp();
-//    }
+    @AfterEach
+    public void tearDown() {
+        driver.quit();
+    }
 }

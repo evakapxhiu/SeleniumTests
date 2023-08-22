@@ -45,8 +45,6 @@ public class HoversPage {
             return caption.findElement(link).getAttribute("href");
         }
 
-        public String getTextLink(){
-            return caption.findElement(link).getText();
-        }
+
     }
 }
